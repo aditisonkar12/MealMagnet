@@ -1,63 +1,123 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
     <meta name="description"
-        content="MealMagnet is a recipe discovery web application that helps users search meals, explore ingredients, and view cooking instructions using TheMealDB API.">
+        content="MealMagnet is a responsive recipe discovery web application that helps users search recipes, explore ingredients, and view cooking instructions using TheMealDB API.">
+
     <title>MealMagnet | Recipe Finder</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
+
+    <!-- ================= HEADER ================= -->
+
     <header class="header">
         <img src="assets/images/logo.png" alt="MealMagnet Logo" class="logo">
-        <h1 class="site-title"> Meal Magnet </h1>
+        <h1 class="site-title">MealMagnet</h1>
     </header>
 
-    <nav class="navbar">
-        <form class="input-container">
-            <label for="meal-search" class="sr-only">Search for a recipe</label>
+    <!-- ================= NAVIGATION ================= -->
 
-            <input type="text" id="meal-search" class="input" placeholder="Search recipes..." autocomplete="off" />
-            <i class="fa-solid fa-magnifying-glass magnifier"></i>
+    <nav class="navbar">
+
+        <form class="input-container" id="search-form">
+
+            <label for="meal-search" class="sr-only">
+                Search for a recipe
+            </label>
+
+            <input
+                type="text"
+                id="meal-search"
+                class="input"
+                placeholder="Search recipes..."
+                autocomplete="off">
+
+            <button
+                type="submit"
+                class="search-button"
+                aria-label="Search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </button>
+
         </form>
 
-        <ul>
+        <ul class="meal-categories">
             <li>Breakfast</li>
             <li>Lunch</li>
             <li>Snacks</li>
             <li>Dinner</li>
         </ul>
+
     </nav>
 
+    <!-- ================= HERO SECTION ================= -->
+
     <main>
+
         <section class="hero-section">
+
             <div class="hero-image"></div>
 
             <div class="hero-content">
-                <h2 class="recipe-title">Discover Delicious Recipes with MealMagnet!</h2>
+
+                <h2 class="recipe-title">
+                    Discover Delicious Recipes with MealMagnet!
+                </h2>
+
                 <p class="recipe-description">
-                    Craving something delicious but not sure what to cook? MealMagnet is here to spark your culinary
-                    creativity! Explore a wide variety of mouthwatering recipes, from quick & easy meals to gourmet
-                    delights. Whether you're a home cook or a food enthusiast, find step-by-step guides, ingredient
-                    lists, and cooking inspiration tailored just for you.
+                    Craving something delicious but not sure what to cook?
+                    MealMagnet is here to spark your culinary creativity.
+                    Explore a wide variety of mouthwatering recipes, from
+                    quick everyday meals to gourmet dishes. Search recipes,
+                    discover ingredients, and cook with confidence.
                 </p>
-                <ul>
+
+                <ul class="feature-list">
                     <li>🔍 <strong>Search for your favorite dishes</strong></li>
                     <li>👨‍🍳 <strong>Discover new flavors & cuisines</strong></li>
                 </ul>
-                <p>Let’s turn every meal into a masterpiece—one recipe at a time! 🍕🥗🍰</p>
 
-                <button class="main-button" type="button">Get Cooking!</button>
+                <p class="hero-text">
+                    Let's turn every meal into a masterpiece—one recipe at a
+                    time! 🍕🥗🍰
+                </p>
+
+                <button class="main-button" type="button">
+                    Get Cooking!
+                </button>
+
             </div>
+
         </section>
+
     </main>
+
+    <!-- ================= INGREDIENTS ================= -->
 
     <section class="ingredients-section">
 
@@ -69,7 +129,10 @@
 
     </section>
 
+    <!-- ================= JAVASCRIPT ================= -->
+
     <script src="js/app.js"></script>
+
 </body>
 
 </html>
