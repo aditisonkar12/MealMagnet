@@ -17,7 +17,7 @@ const searchmeal = async (e) => {
     console.log("User Input:", searchQuery);
 
     if (searchQuery) {
-        const meals = await fetchMealdata(searchQuery);
+        const meals = await fetchMeals(searchQuery);
 
         if (!meals) {
             showAlert();
@@ -51,7 +51,7 @@ const searchmeal = async (e) => {
 
 //fetch data
 //we will fetch data from any food site on the internet
-const fetchMealdata = async (val) => {
+const fetchMeals = async (val) => {
     try {
         const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${val}`);
         console.log("Response Status:", response.status);
