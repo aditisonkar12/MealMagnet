@@ -268,3 +268,282 @@ main{
     transform:translateY(-3px);
     box-shadow:0 15px 30px rgba(255,94,98,.35);
 }
+
+/* ===========================
+   INGREDIENTS SECTION
+=========================== */
+
+.ingredients-section{
+    width:90%;
+    max-width:1200px;
+    margin:70px auto;
+    background:rgba(255,255,255,0.9);
+    border-radius:var(--radius);
+    padding:45px;
+    box-shadow:var(--shadow);
+}
+
+.ingredients-heading{
+    text-align:center;
+    color:var(--primary);
+    font-size:2rem;
+    margin-bottom:35px;
+    font-family:'Playfair Display',serif;
+}
+
+.ingredients{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.ingredients span{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    width:100%;
+}
+
+.ing{
+    list-style:none;
+    background:linear-gradient(135deg,#fff4ef,#ffe0d6);
+    color:#8B0000;
+    padding:12px 18px;
+    border-radius:30px;
+    border:1px solid rgba(255,126,95,.3);
+    font-size:0.95rem;
+    font-weight:500;
+    transition:var(--transition);
+    box-shadow:0 5px 12px rgba(0,0,0,.08);
+}
+
+.ing:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 18px rgba(0,0,0,.12);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer{
+    margin-top:70px;
+    padding:30px 20px;
+    text-align:center;
+    background:rgba(255,255,255,.8);
+    border-top:1px solid rgba(0,0,0,.08);
+}
+
+.footer p{
+    color:#666;
+    font-size:.95rem;
+}
+
+.footer strong{
+    color:var(--primary);
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#ffeaea;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ff8a65;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#ff5e62;
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.hero-section,
+.ingredients-section{
+    animation:fadeIn .7s ease;
+}
+
+/* ===========================
+   LOADING PLACEHOLDER
+=========================== */
+
+.loading{
+    text-align:center;
+    font-size:1.1rem;
+    color:#777;
+    padding:40px;
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+
+@media(max-width:1024px){
+
+    .hero-section{
+        flex-direction:column;
+        text-align:center;
+        padding:45px;
+    }
+
+    .hero-image{
+        width:260px;
+        height:260px;
+        min-width:260px;
+    }
+
+    .recipe-description,
+    .hero-text{
+        width:100%;
+    }
+
+    .feature-list{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .site-title{
+        font-size:2.3rem;
+    }
+
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .input-container{
+        width:100%;
+        max-width:400px;
+    }
+
+    .meal-categories{
+        justify-content:center;
+        gap:18px;
+    }
+
+    .meal-categories li{
+        font-size:.95rem;
+    }
+
+    .hero-section{
+        padding:30px;
+    }
+
+    .recipe-title{
+        font-size:2rem;
+    }
+
+    .hero-image{
+        width:220px;
+        height:220px;
+        min-width:220px;
+    }
+
+    .ingredients-section{
+        padding:30px 20px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .header{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .logo{
+        width:70px;
+        height:70px;
+    }
+
+    .site-title{
+        font-size:1.9rem;
+        text-align:center;
+    }
+
+    .recipe-title{
+        font-size:1.6rem;
+    }
+
+    .recipe-description,
+    .hero-text{
+        font-size:.95rem;
+    }
+
+    .hero-image{
+        width:180px;
+        height:180px;
+        min-width:180px;
+    }
+
+    .main-button{
+        width:100%;
+    }
+
+    .ingredients-heading{
+        font-size:1.6rem;
+    }
+
+    .ing{
+        font-size:.85rem;
+        padding:10px 15px;
+    }
+
+}
+
+/* ===========================
+   UTILITY CLASSES
+=========================== */
+
+.hidden{
+    display:none !important;
+}
+
+.text-center{
+    text-align:center;
+}
+
+.mt-2{
+    margin-top:20px;
+}
+
+.mt-3{
+    margin-top:30px;
+}
+
+.mb-2{
+    margin-bottom:20px;
+}
+
+.mb-3{
+    margin-bottom:30px;
+}
