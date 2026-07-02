@@ -1,76 +1,155 @@
-const searchmeal = async (e) => {
-    e.preventDefault();
+// ==========================
+// DOM ELEMENTS
+// ==========================
 
-    //select elements
-    const input = document.querySelector('.input');
-    const title = document.querySelector('.title');
-    const info = document.querySelector('.info');
-    const img = document.querySelector('.img');
-    const ingredientsOutput = document.querySelector('.ingredients');
+const searchForm = document.getElementById("search-form");
+const searchInput = document.getElementById("meal-search");
 
-    const showAlert = () => {
-        alert('Meal Not Found! :(');
-    };
+const recipeTitle = document.querySelector(".recipe-title");
+const recipeDescription = document.querySelector(".recipe-description");
+const recipeImage = document.querySelector(".hero-image");
 
-    //get the user value
-    const searchQuery = input.value.trim();
-    console.log("User Input:", searchQuery);
+const ingredientsContainer = document.querySelector(".ingredients");
+const ingredientsHeading = document.querySelector(".ingredients-heading");
 
-    if (searchQuery) {
-        const meals = await fetchMeals(searchQuery);
+// ==========================
+// FETCH RECIPES
+// ==========================
 
-        if (!meals) {
-            showAlert();
-            return;
-        }
+async function fetchMeals(searchQuery) {
 
-        const meal = meals[0]; // Take first result if multiple meals are returned
-        const { strMeal, strMealThumb, strInstructions } = meal;
-
-        title.textContent = strMeal;
-        img.style.backgroundImage = `url(${strMealThumb})`; // Set image background
-        info.textContent = strInstructions;
-
-        // Extract and display ingredients
-        const ingredients = [];
-        for (let i = 1; i <= 20; i++) {
-            if (meal[`strIngredient${i}`]) {
-                ingredients.push(`${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`);
-            } else {
-                break;
-            }
-        }
-
-        ingredientsOutput.innerHTML = `<span>${ingredients.map((ing) => `<li class="ing">${ing}</li>`).join("")}</span>`;
-
-    } else {
-        alert("Please try searching for another meal! :)")
-    }
-
-};
-
-//fetch data
-//we will fetch data from any food site on the internet
-const fetchMeals = async (val) => {
     try {
-        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${val}`);
-        console.log("Response Status:", response.status);
 
-        if (!response.ok) throw new Error("failed to fetch API");
+        const response = await fetch(
+            `https://www.themealdb.com/api/json/v1/1/search.php?s=${encodeURIComponent(searchQuery)}`
+        );
+
+        if (!response.ok) {
+            throw new Error("Unable to fetch recipes.");
+        }
 
         const data = await response.json();
-        console.log("API Response:", data);
 
-        return data.meals || null;
+        return data.meals;
+
     } catch (error) {
-        console.error("API Error:", error);
+
+        console.error(error);
         return null;
+
     }
-};
 
+}
 
-const form = document.querySelector('form');
-form.addEventListener('submit', searchmeal);
+// ==========================
+// DISPLAY MESSAGE
+// ==========================
 
-const magnifier = document.querySelector('.magnifier');
-magnifier.addEventListener('click', searchmeal);
+function displayMessage(message) {
+
+    recipeTitle.textContent = message;
+
+    recipeDescription.textContent = "";
+
+    recipeImage.style.backgroundImage = "";
+
+    ingredientsHeading.style.display = "none";
+
+    ingredientsContainer.innerHTML = "";
+
+}
+
+// ==========================
+// DISPLAY INGREDIENTS
+// ==========================
+
+function displayIngredients(meal) {
+
+    const ingredients = [];
+
+    for (let index = 1; index <= 20; index++) {
+
+        const ingredient = meal[`strIngredient${index}`];
+        const measure = meal[`strMeasure${index}`];
+
+        if (ingredient && ingredient.trim() !== "") {
+
+            ingredients.push(
+                `<li class="ing">${ingredient} ${measure}</li>`
+            );
+
+        }
+
+    }
+
+    ingredientsHeading.style.display = "block";
+
+    ingredientsContainer.innerHTML = ingredients.join("");
+
+}
+
+// ==========================
+// DISPLAY RECIPE
+// ==========================
+
+function displayRecipe(meal) {
+
+    recipeTitle.textContent = meal.strMeal;
+
+    recipeDescription.textContent = meal.strInstructions;
+
+    recipeImage.style.backgroundImage = `url(${meal.strMealThumb})`;
+
+    displayIngredients(meal);
+
+}
+
+// ==========================
+// SEARCH HANDLER
+// ==========================
+
+async function searchMeal(event) {
+
+    event.preventDefault();
+
+    const searchQuery = searchInput.value.trim();
+
+    if (!searchQuery) {
+
+        displayMessage("Please enter a recipe name.");
+
+        return;
+
+    }
+
+    recipeTitle.textContent = "Searching...";
+
+    recipeDescription.textContent = "Fetching delicious recipes for you...";
+
+    ingredientsContainer.innerHTML = "";
+
+    const meals = await fetchMeals(searchQuery);
+
+    if (!meals || meals.length === 0) {
+
+        displayMessage("No recipes found. Try another search.");
+
+        return;
+
+    }
+
+    displayRecipe(meals[0]);
+
+}
+
+// ==========================
+// EVENT LISTENERS
+// ==========================
+
+searchForm.addEventListener("submit", searchMeal);
+
+// ==========================
+// INITIAL STATE
+// ==========================
+
+ingredientsHeading.style.display = "none";
