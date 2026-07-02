@@ -1,0 +1,201 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #ffe6e6, #ffccff); /* Soft pink gradient */
+    font-family: 'Poppins', sans-serif;
+}
+
+.site-title {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #8B0000;
+    margin-top: 30px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.logo {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover; 
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid orange;
+    padding: 5px;
+    width: 300px;
+    height: 50px;
+    border-radius: 50px;
+    margin: 10px;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+.input-container:hover {
+    box-shadow: 0px 5px 15px rgba(225, 166, 55, 0.764);;
+}
+
+.input {
+    margin: 10px 50px;
+    margin-left: 20px;
+    width: 100%;
+    color: firebrick;
+    border: none;
+    background: transparent;
+    outline: none;
+    transition-delay: 0.5s;
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+}
+
+.input::placeholder {
+    color: rgb(0, 0, 0); 
+    font-style: italic;
+}
+
+.magnifier {
+    position: absolute;
+    right: 15px;
+    width: 25px;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+    color: darkslateblue;
+}
+
+ul li {
+    display: inline;
+    margin-left: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 75%;
+    padding: 3.5rem;
+    box-shadow: 10px 10px 45px 5px grey;
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.849);
+    border-radius: 10px;
+}
+
+.content-container h2 {
+    font-family: 'Playfair Display',  serif;
+    font-weight: bold;
+    font-size: 2rem;
+    color: darkred;
+}
+
+.content-container p, .content-container ul {
+    font-family: sans-serif;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    color: cadetblue;
+    width: 40rem;
+}
+
+.content-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.content-container li {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+.img {
+    transform: translate(-30px);
+    margin-top: 1rem;
+    width: 270px;
+    height: 270px;
+    border-radius: 300px;
+    background: url('https://plus.unsplash.com/premium_photo-1690561082029-0eb2ed65a09f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ingredients {
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 5rem;
+    padding: 5rem;
+}
+
+.ingredients span {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.ing {
+    padding: 10px 20px ;
+    border: 2px solid rosybrown;
+    color: palevioletred;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-radius: 100px ;
+}
+
+.main-button {
+    font-family: 'Playfair Display',  serif;
+    font-style: italic;
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    border: none;
+    border-radius: 50px;
+    border: 2px solid #000000;
+    padding: 12px 25px;
+    font-size: 0.8rem;
+    color: rgb(0, 0, 0);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
