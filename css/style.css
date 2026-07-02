@@ -1,201 +1,270 @@
+/* ===========================
+   GOOGLE FONTS
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===========================
+   CSS VARIABLES
+=========================== */
+
+:root{
+    --primary:#8B0000;
+    --secondary:#ff7b54;
+    --accent:#ff5e62;
+    --light:#ffffff;
+    --background:#fff7f8;
+    --text:#333;
+    --muted:#5d6d7e;
+    --shadow:0 12px 35px rgba(0,0,0,0.12);
+    --transition:0.3s ease;
+    --radius:18px;
+}
+
+/* ===========================
+   RESET
+=========================== */
+
 *{
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    background: linear-gradient(to right, #ffe6e6, #ffccff); /* Soft pink gradient */
-    font-family: 'Poppins', sans-serif;
+html{
+    scroll-behavior:smooth;
 }
 
-.site-title {
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 3rem;
-    font-weight: bold;
-    color: #8B0000;
-    margin-top: 30px;
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ffe6e6,#fff3e6,#ffe8f4);
+    color:var(--text);
+    min-height:100vh;
 }
 
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+/* ===========================
+   ACCESSIBILITY
+=========================== */
+
+.sr-only{
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    border:0;
 }
 
-.logo {
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-    overflow: hidden;
-    object-fit: cover; 
+/* ===========================
+   HEADER
+=========================== */
+
+.header{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    padding:35px 20px 20px;
 }
 
-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 20px;
+.logo{
+    width:85px;
+    height:85px;
+    border-radius:50%;
+    object-fit:cover;
+    box-shadow:0 8px 18px rgba(0,0,0,0.18);
 }
 
-.input-container {
-    display: flex;
-    align-items: center;
-    border: 1px solid orange;
-    padding: 5px;
-    width: 300px;
-    height: 50px;
-    border-radius: 50px;
-    margin: 10px;
-    position: relative;
-    transition: all 0.5s ease-in-out;
+.site-title{
+    font-size:3rem;
+    color:var(--primary);
+    font-weight:700;
+    letter-spacing:1px;
 }
 
-.input-container:hover {
-    box-shadow: 0px 5px 15px rgba(225, 166, 55, 0.764);;
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    flex-wrap:wrap;
 }
 
-.input {
-    margin: 10px 50px;
-    margin-left: 20px;
-    width: 100%;
-    color: firebrick;
-    border: none;
-    background: transparent;
-    outline: none;
-    transition-delay: 0.5s;
-    font-family: 'Poppins', sans-serif;
-    color: #000000;
+/* ===========================
+   SEARCH BAR
+=========================== */
+
+.input-container{
+    display:flex;
+    align-items:center;
+    width:340px;
+    background:#fff;
+    border:2px solid rgba(255,140,0,0.3);
+    border-radius:50px;
+    padding:5px 8px 5px 18px;
+    transition:var(--transition);
+    box-shadow:0 5px 18px rgba(0,0,0,0.05);
 }
 
-.input::placeholder {
-    color: rgb(0, 0, 0); 
-    font-style: italic;
+.input-container:hover,
+.input-container:focus-within{
+    box-shadow:0 10px 30px rgba(255,126,95,.25);
+    border-color:var(--secondary);
 }
 
-.magnifier {
-    position: absolute;
-    right: 15px;
-    width: 25px;
-    text-align: center;
-    margin: 0 auto;
-    cursor: pointer;
-    color: darkslateblue;
+.input{
+    flex:1;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-size:1rem;
+    color:var(--text);
+    font-family:'Poppins',sans-serif;
 }
 
-ul li {
-    display: inline;
-    margin-left: 50px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.input::placeholder{
+    color:#888;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.search-button{
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--secondary),var(--accent));
+    color:white;
+    cursor:pointer;
+    transition:var(--transition);
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.container {
-    width: 75%;
-    padding: 3.5rem;
-    box-shadow: 10px 10px 45px 5px grey;
-    margin-top: 3.5rem;
-    margin-bottom: 3.5rem;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.849);
-    border-radius: 10px;
+.search-button:hover{
+    transform:scale(1.08);
 }
 
-.content-container h2 {
-    font-family: 'Playfair Display',  serif;
-    font-weight: bold;
-    font-size: 2rem;
-    color: darkred;
+.search-button i{
+    font-size:1rem;
 }
 
-.content-container p, .content-container ul {
-    font-family: sans-serif;
-    line-height: 1.5;
-    margin-bottom: 2rem;
-    color: cadetblue;
-    width: 40rem;
+/* ===========================
+   CATEGORIES
+=========================== */
+
+.meal-categories{
+    display:flex;
+    gap:30px;
+    list-style:none;
+    flex-wrap:wrap;
 }
 
-.content-container ul {
-    list-style-type: none;
-    padding: 0;
+.meal-categories li{
+    cursor:pointer;
+    font-weight:500;
+    transition:var(--transition);
+    color:#555;
 }
 
-.content-container li {
-    font-size: 1.1rem;
-    margin: 5px 0;
+.meal-categories li:hover{
+    color:var(--primary);
+    transform:translateY(-2px);
 }
 
-.img {
-    transform: translate(-30px);
-    margin-top: 1rem;
-    width: 270px;
-    height: 270px;
-    border-radius: 300px;
-    background: url('https://plus.unsplash.com/premium_photo-1690561082029-0eb2ed65a09f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+/* ===========================
+   HERO SECTION
+=========================== */
+
+main{
+    display:flex;
+    justify-content:center;
+    margin:50px 0;
 }
 
-.ingredients {
-    width: 75%;
-    margin: 0 auto;
-    margin-top: 5rem;
-    padding: 5rem;
+.hero-section{
+    width:90%;
+    max-width:1200px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
+    padding:55px;
+    background:rgba(255,255,255,0.88);
+    backdrop-filter:blur(10px);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
 }
 
-.ingredients span {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
+.hero-image{
+    min-width:300px;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:url("https://plus.unsplash.com/premium_photo-1690561082029-0eb2ed65a09f?q=80&w=2070&auto=format&fit=crop");
+    background-size:cover;
+    background-position:center;
+    transition:0.5s;
 }
 
-.ing {
-    padding: 10px 20px ;
-    border: 2px solid rosybrown;
-    color: palevioletred;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    border-radius: 100px ;
+.hero-image:hover{
+    transform:scale(1.05);
 }
 
-.main-button {
-    font-family: 'Playfair Display',  serif;
-    font-style: italic;
-    background: linear-gradient(to right, #ff9966, #ff5e62);
-    border: none;
-    border-radius: 50px;
-    border: 2px solid #000000;
-    padding: 12px 25px;
-    font-size: 0.8rem;
-    color: rgb(0, 0, 0);
-    transition: 0.3s;
-    cursor: pointer;
+.hero-content{
+    flex:1;
 }
 
+.recipe-title{
+    font-family:'Playfair Display',serif;
+    font-size:2.4rem;
+    color:var(--primary);
+    margin-bottom:25px;
+}
 
+.recipe-description,
+.hero-text{
+    color:var(--muted);
+    line-height:1.8;
+    margin-bottom:22px;
+}
 
+.feature-list{
+    list-style:none;
+    margin-bottom:25px;
+}
 
+.feature-list li{
+    margin-bottom:10px;
+    color:#3b4b5c;
+}
 
+/* ===========================
+   BUTTON
+=========================== */
 
+.main-button{
+    background:linear-gradient(135deg,var(--secondary),var(--accent));
+    color:#fff;
+    border:none;
+    padding:14px 30px;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:1rem;
+    font-weight:600;
+    transition:var(--transition);
+    box-shadow:0 10px 20px rgba(255,94,98,.25);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+.main-button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 30px rgba(255,94,98,.35);
+}
