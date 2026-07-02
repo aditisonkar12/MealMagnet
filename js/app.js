@@ -53,12 +53,12 @@ const searchmeal = async (e) => {
 //we will fetch data from any food site on the internet
 const fetchMealdata = async (val) => {
     try {
-        const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${val}`);
-        console.log("Respoonse Status:", res.status);
+        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${val}`);
+        console.log("Response Status:", response.status);
 
-        if (!res.ok) throw new Error("failed to fetch API");
+        if (!response.ok) throw new Error("failed to fetch API");
 
-        const data = await res.json();
+        const data = await response.json();
         console.log("API Response:", data);
 
         return data.meals || null;
