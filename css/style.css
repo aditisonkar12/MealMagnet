@@ -284,6 +284,7 @@ main{
 }
 
 .ingredients-heading{
+    display:none;
     text-align:center;
     color:var(--primary);
     font-size:2rem;
