@@ -13,11 +13,11 @@ const searchmeal = async (e) => {
     };
 
     //get the user value
-    const val = input.value.trim();
-    console.log("User Input:", val);
+    const searchQuery = input.value.trim();
+    console.log("User Input:", searchQuery);
 
-    if (val) {
-        const meals = await fetchMealdata(val);
+    if (searchQuery) {
+        const meals = await fetchMealdata(searchQuery);
 
         if (!meals) {
             showAlert();
