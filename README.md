@@ -18,14 +18,14 @@ A responsive recipe discovery web application built with **HTML, CSS, and JavaSc
 
 ## ✨ Features
 
-- 🔍 Search recipes by name
-- 🍽️ View detailed recipe information
-- 🥗 Display ingredients with measurements
-- 📖 Step-by-step cooking instructions
-- 🌐 Live recipe data from TheMealDB API
-- 📱 Fully responsive design
-- ⚠️ Graceful handling of invalid searches
-- 🎨 Modern and clean user interface
+- Search recipes by name
+- View detailed recipe information
+- Display ingredients with measurements
+- Step-by-step cooking instructions
+- Live recipe data from TheMealDB API
+- Fully responsive design
+- Graceful handling of invalid searches
+- Modern and clean user interface
 
 ---
 
