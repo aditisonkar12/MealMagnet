@@ -235,12 +235,6 @@ function closeModal() {
 
 }
 
-    recipeImage.style.backgroundImage = `url(${meal.strMealThumb})`;
-
-    displayIngredients(meal);
-
-}
-
 // ==========================
 // SEARCH HANDLER
 // ==========================
@@ -284,6 +278,44 @@ async function searchMeal(event) {
 // ==========================
 
 searchForm.addEventListener("submit", searchMeal);
+
+// Category button event listeners
+categoryButtons.forEach(button => {
+
+    button.addEventListener("click", async (e) => {
+
+        const category = button.dataset.category;
+
+        openModal(category);
+
+        recipesGrid.innerHTML = '<div class="no-recipes-message">Loading recipes...</div>';
+
+        allCategoryRecipes = await fetchMealsByCategory(category);
+
+        displayCategoryRecipes(allCategoryRecipes);
+
+    });
+
+});
+
+// Modal close button
+modalCloseBtn.addEventListener("click", closeModal);
+
+// Close modal when clicking outside
+categoryModal.addEventListener("click", (e) => {
+
+    if (e.target === categoryModal) {
+        closeModal();
+    }
+
+});
+
+// Category search input
+categorySearchInput.addEventListener("input", (e) => {
+
+    displayCategoryRecipes(allCategoryRecipes, e.target.value);
+
+});
 
 // ==========================
 // INITIAL STATE
