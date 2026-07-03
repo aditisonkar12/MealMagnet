@@ -4,7 +4,7 @@ A responsive recipe discovery web application built with **HTML, CSS, and JavaSc
 
 ---
 
-## 📸 Preview
+## Preview
 
 | Home Page | Search Results |
 |------------|----------------|
@@ -98,7 +98,7 @@ MealMagnet uses the free **TheMealDB API** to fetch recipe data in real time.
 
 ---
 
-## 💡 Challenges
+## Challenges
 
 While building MealMagnet, I focused on:
 
@@ -110,7 +110,7 @@ While building MealMagnet, I focused on:
 
 ---
 
-## 📚 What I Learned
+## What I Learned
 
 This project helped me strengthen my understanding of:
 
@@ -125,7 +125,7 @@ This project helped me strengthen my understanding of:
 
 ---
 
-## 🚀 Future Improvements
+## Future Improvements
 
 - Favorite recipes
 - Random recipe generator
@@ -137,7 +137,7 @@ This project helped me strengthen my understanding of:
 
 ---
 
-## 👩‍💻 Author
+## Author
 
 **Aditi Sonkar**
 
@@ -145,7 +145,7 @@ GitHub: https://github.com/aditisonkar12
 
 ---
 
-## 🙏 Acknowledgements
+## Acknowledgements
 
 - **TheMealDB** for providing the recipe API
 - **Font Awesome** for icons
