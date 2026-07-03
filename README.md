@@ -6,8 +6,6 @@ A responsive recipe discovery web application built with **HTML, CSS, and JavaSc
 
 ## 📸 Preview
 
-> Add screenshots inside the `screenshots` folder.
-
 | Home Page | Search Results |
 |------------|----------------|
 | ![](screenshots/home.png) | ![](screenshots/search-result.png) |
