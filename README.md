@@ -61,8 +61,7 @@ MealMagnet/
 ├── screenshots/
 │
 ├── index.html
-├── README.md
-└── LICENSE
+└── README.md
 ```
 
 ---
