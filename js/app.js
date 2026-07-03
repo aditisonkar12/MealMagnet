@@ -253,23 +253,29 @@ async function searchMeal(event) {
 
     }
 
-    recipeTitle.textContent = "Searching...";
+    modalTitle.textContent = `Search Results for "${searchQuery}"`;
 
-    recipeDescription.textContent = "Fetching delicious recipes for you...";
+    categoryModal.classList.add("active");
 
-    ingredientsContainer.innerHTML = "";
+    recipesGrid.innerHTML = '<div class="no-recipes-message">Searching for recipes...</div>';
+
+    categorySearchInput.value = "";
 
     const meals = await fetchMeals(searchQuery);
 
     if (!meals || meals.length === 0) {
 
         displayMessage("No recipes found. Try another search.");
+        
+        recipesGrid.innerHTML = '<div class="no-recipes-message">No recipes found for "' + searchQuery + '"</div>';
 
         return;
 
     }
 
-    displayRecipe(meals[0]);
+    allCategoryRecipes = meals;
+
+    displayCategoryRecipes(meals);
 
 }
 
