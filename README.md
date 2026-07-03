@@ -127,13 +127,13 @@ This project helped me strengthen my understanding of:
 
 ## 🚀 Future Improvements
 
-- ❤️ Favorite recipes
-- 🎲 Random recipe generator
-- 🌙 Dark mode
-- 🔎 Search suggestions
-- 🕒 Recent searches
-- 🍽️ Filter recipes by cuisine
-- 📤 Share recipes
+- Favorite recipes
+- Random recipe generator
+- Dark mode
+- Search suggestions
+- Recent searches
+- Filter recipes by cuisine
+- Share recipes
 
 ---
 
