@@ -286,7 +286,9 @@ categoryButtons.forEach(button => {
 
         const category = button.dataset.category;
 
-        openModal(category);
+        const displayName = button.textContent;
+
+        openModal(displayName);
 
         recipesGrid.innerHTML = '<div class="no-recipes-message">Loading recipes...</div>';
 
